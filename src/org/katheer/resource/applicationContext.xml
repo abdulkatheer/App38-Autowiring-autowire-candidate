@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="org.katheer.bean.Address">
+        <property name="firstLine" value="4/167, Akshaya Nagar"/>
+        <property name="secondLine" value="Seelapadi PO, Dindigul"/>
+        <property name="pin" value="624005"/>
+    </bean>
+    <!-- if bean is is marked with autowire-candidate=false, then it will not considered for autowiring -->
+    <bean class="org.katheer.bean.Address" autowire-candidate="false">
+        <property name="firstLine" value="4/167, Akshaya Nagar"/>
+        <property name="secondLine" value="Seelapadi PO, Dindigul"/>
+        <property name="pin" value="624005"/>
+    </bean>
+
+    <bean id="std1" class="org.katheer.bean.Student" autowire="byType">
+        <property name="name" value="Abdul Katheer"/>
+        <property name="regNo" value="S101"/>
+    </bean>
+</beans>
